@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #291123;
+}
+
+#container {
+    text-align: center;
+    margin-top: 10%;
+}
+
+.positionEffect {
+    color: #F5EBFA;
+    height: 10vh;
+    display: grid;
+    place-items: center;
+}
+
+.effect {
+    width: 23%;
+    animation: typing 2s steps(15), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid;
+    font-size: 45px;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+
+#form {
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+#todo-input {
+    width: 290px;
+    height: 24px;
+    margin-bottom: 5%;
+    border-radius: 10px;
+    border: 1px solid #F5EBFA;
+    background-color: #E7DBEF;
+    font-size: 15px;
+    transition: 0.5s;
+}
+
+#todo-input::placeholder {
+    color: #291123;
+}
+
+#todo-input:hover {
+    background-color: #291123;
+    color: #E7DBEF;
+}
+
+#btn-style {
+    width: 90px;
+    height: 30px;
+    border: 1px solid #F5EBFA;
+    border-radius: 10px;
+    transition: 0.5s;
+    color: #291123;
+    background-color: #E7DBEF;
+    margin-left: 10px;
+}
+
+#btn-style:hover {
+    background-color: #291123;
+    color: #E7DBEF;
+}
+
+.tasks {
+    background-color: #662255;
+    width: 50%;
+    height: 38px;
+    margin-left: 25%;
+    border-radius: 15px;
+    padding-bottom: 3px;
+    margin-top: 3%;
+}
+
+span {
+    color: #E7DBEF;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-style2 {
+    border-radius: 50px;
+    border: none;
+    width: 40px;
+    height: 25px;
+    padding: 4px;
+    margin-left: 10px;
+    margin-top: 9px;
+    transition: 0.5s;
+}
+
+.btn-style2:hover {
+    background-color: #d14bb0;
+}
+
+footer {
+    color: #F5EBFA;
+    text-align: center;
+    margin-top: 20%;
+    opacity: 25%;
+}
+
