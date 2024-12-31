@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <title>To-Do List</title>
 </head>
+
 <body>
     <main>
         <section>
@@ -17,7 +19,7 @@
                 <div class="positionEffect">
                     <h1 class="effect">Just do it.</h1>
                 </div>
-                
+
                 <form id="form">
                     <input type="text" id="todo-input" placeholder=" Add a task">
                     <button type="submit" id="btn-style">
@@ -25,26 +27,13 @@
                     </button>
                 </form>
                 <!--vai aparecer quando o form for enviado e a task for salva, css hidden-->
-                <div class="tasks">
-                    <span class="box-text">
-                        <p id="text"></p>
-                        <div>
-                            <button class="btn-style2 task-complete">
-                                <i class="fa-solid fa-check"></i>
-                            </button>
-                        </div>
-                        <div>
-                            <button class="btn-style2 delete-button">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </div>
-                    </span>
-                </div>
+                <div class="taskContainer"></div>
             </div>
         </section>
     </main>
     <footer>
-        <p>project, december 2024</p> 
+        <p>project, december 2024</p>
     </footer>
 </body>
+
 </html>

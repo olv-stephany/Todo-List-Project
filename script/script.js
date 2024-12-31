@@ -1,10 +1,8 @@
 //pegar o input do form
 const formInfo = document.getElementById('form');
 const taskInput = document.getElementById('todo-input');
-const taskOutput = document.querySelector(".tasks");
+const taskOutput = document.querySelector(".taskContainer");
 const text = document.getElementById('text');
-const taskComplete = document.querySelector(".task-complete");
-const taskDelete = document.querySelector(".delete-button");
 
 const saveTodo = (text) => {
     //criaçao da div geral
@@ -21,7 +19,7 @@ const saveTodo = (text) => {
     todoText.innerText = text;
     //adiçao do todoText no novo elemento criado todo(div)
     boxText.appendChild(todoText)
-    
+
     const doneButton = document.createElement("button")
     doneButton.classList.add("btn-style2")
     doneButton.classList.add("task-complete")
@@ -35,7 +33,7 @@ const saveTodo = (text) => {
     boxText.appendChild(removeButton);
 
     taskOutput.appendChild(todo);
-    taskInput.value ="";
+    taskInput.value = "";
     taskInput.focus();
 }
 
@@ -44,8 +42,8 @@ formInfo.addEventListener("submit", (e) => {
 
     //armazenando a task
     let task = taskInput.value;
-    
-    if(task){
+
+    if (task) {
         //verificando se o usuario nao salvou uma task sem titulo
         //save todo
         saveTodo(task);
@@ -57,15 +55,15 @@ document.addEventListener("click", (e) => {
     const parentElement = clickElement.closest("div");
     //selecionando a div mais proxima do clickelement
 
-    if(clickElement.classList.contains("task-complete")){
+    if (clickElement.classList.contains("task-complete")) {
         parentElement.classList.toggle("done");
         //o toggle vai adicionar ou retirar ao ser clicado
     }
-    
+
     //botao de remoçao
-    if(clickElement.classList.contains("delete-button")){
+    if (clickElement.classList.contains("delete-button")) {
         parentElement.remove();
-        //removendo a div de tasks
+        //removendo a div principal de tasks
     }
 
 })

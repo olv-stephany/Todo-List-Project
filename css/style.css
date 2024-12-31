@@ -81,12 +81,12 @@ body {
 
 .tasks {
     background-color: #662255;
-    width: 50%;
+    width: 40%;
     height: 38px;
-    margin-left: 25%;
+    margin-left: 30%;
     border-radius: 15px;
     padding-bottom: 3px;
-    margin-top: 3%;
+    margin-top: 10px;
 }
 
 span {
@@ -110,15 +110,15 @@ span {
     background-color: #d14bb0;
 }
 
-.done{
+.done {
     text-decoration: line-through #F5EBFA;
     font-style: italic;
     opacity: 0.7;
 }
+
 footer {
     color: #F5EBFA;
     text-align: center;
-    margin-top: 20%;
+    margin-top: 10%;
     opacity: 25%;
 }
-
