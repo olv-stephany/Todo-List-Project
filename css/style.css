@@ -122,3 +122,22 @@ footer {
     margin-top: 10%;
     opacity: 25%;
 }
+
+/*Media Querie*/
+@media screen and (max-width: 600px) {
+    #container {
+        text-align: center;
+        margin-top: 50%;
+    }
+    .effect {
+        width: 60%;
+        animation: typing 2s steps(18), blink .5s step-end infinite alternate;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 2px solid;
+        font-size: 35px;
+    }
+    #todo-input {
+        width: 230px;
+    }
+}
