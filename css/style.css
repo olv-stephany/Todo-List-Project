@@ -110,6 +110,11 @@ span {
     background-color: #d14bb0;
 }
 
+.done{
+    text-decoration: line-through #F5EBFA;
+    font-style: italic;
+    opacity: 0.7;
+}
 footer {
     color: #F5EBFA;
     text-align: center;
