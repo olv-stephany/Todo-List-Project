@@ -140,4 +140,9 @@ footer {
     #todo-input {
         width: 230px;
     }
+    .tasks {
+        background-color: #662255;
+        width: 75%;
+        margin-left: 11%;
+    }
 }
