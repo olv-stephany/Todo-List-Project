@@ -1,3 +1,5 @@
+//gosto de fazer comentarios sobre o que aprendi.
+
 //pegar o input do form
 const formInfo = document.getElementById('form');
 const taskInput = document.getElementById('todo-input');
@@ -5,6 +7,7 @@ const taskOutput = document.querySelector(".taskContainer");
 const text = document.getElementById('text');
 
 const saveTodo = (text, done = 0, save = 1) => {
+    // temos save igual a 1 pois so salva uma tarefa por vez
     //criaçao da div geral
     const todo = document.createElement("div")
     todo.classList.add("tasks")
@@ -105,6 +108,16 @@ const saveTodoLocalStorange = (todo) => {
     // get = pegar set= salvar
 }
 
+//acessando as tarefas ao entrar no site futuramente
+const loadTodos = () => {
+    const todos = getTodoLS();
+    todos.forEach(todo => {
+        saveTodo(todo.text, todo.done, false);
+        // chama a funçao saveTodo para criar a estrutura html e adiçao de classes a estas, temos um false como ultimo argumento para nao salvar novamente a tarefa que ja esta salva.
+    });
+};
+
+
 //funçao de remoçao do todo na ls
 const removeTodoLS = (todoText) =>{
     const todos = getTodoLS();
@@ -113,6 +126,7 @@ const removeTodoLS = (todoText) =>{
     
     todos.splice(todoText, 1);
     // remove o elemento do array a partir do índice especifico salvo acima, o segundo argumento indica que apenas um elemento será removido nessa funçao.
-
+    
     localStorage.setItem("todos", JSON.stringify(todos)); 
 }
+loadTodos();
