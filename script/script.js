@@ -43,8 +43,11 @@ const saveTodo = (text, done = 0, save = 1) => {
     if(save){
         saveTodoLocalStorange({text, done})
     }
-
     
+    if(save == false){
+        todoText.classList.add("done")
+    }
+
     taskOutput.appendChild(todo);
     taskInput.value = "";
     taskInput.focus();
