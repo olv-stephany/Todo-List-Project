@@ -4,7 +4,7 @@ const taskInput = document.getElementById('todo-input');
 const taskOutput = document.querySelector(".taskContainer");
 const text = document.getElementById('text');
 
-const saveTodo = (text) => {
+const saveTodo = (text, done = 0, save = 1) => {
     //criaçao da div geral
     const todo = document.createElement("div")
     todo.classList.add("tasks")
@@ -32,6 +32,16 @@ const saveTodo = (text) => {
     removeButton.innerHTML = '<i class="fa-solid fa-trash"></i>'
     boxText.appendChild(removeButton);
 
+    //local storange
+    if (done){
+        todo.classList.add("done")
+    }
+
+    if(save){
+        saveTodoLocalStorange({text, done})
+    }
+
+    
     taskOutput.appendChild(todo);
     taskInput.value = "";
     taskInput.focus();
@@ -53,8 +63,9 @@ formInfo.addEventListener("submit", (e) => {
 document.addEventListener("click", (e) => {
     const clickElement = e.target;
     const parentElement = clickElement.closest("div");
-    //selecionando a div mais proxima do clickelement
 
+    //selecionando a div mais proxima do clickelement
+    
     if (clickElement.classList.contains("task-complete")) {
         parentElement.classList.toggle("done");
         //o toggle vai adicionar ou retirar ao ser clicado
@@ -64,6 +75,44 @@ document.addEventListener("click", (e) => {
     if (clickElement.classList.contains("delete-button")) {
         parentElement.remove();
         //removendo a div principal de tasks
+
+        const index = parentElement.dataset.index;
+        //dataset.index armazena o indice desse todo salvo
+        removeTodoLS(index);
     }
 
 })
+
+//criaçao uma funçao para pegar os todos na ls
+const getTodoLS = ()=>{
+    const todos = JSON.parse(localStorage.getItem("todos")) || [] 
+    //usamos json parse pois se nao os item vem em texto (json)
+
+    return todos;
+    //se nao vier nada, retorna um array vazio
+}
+
+const saveTodoLocalStorange = (todo) => {
+    //1 pegar os todos da ls 
+    //2 salvar estes dados em um array
+    //3 salvar tudo na ls
+
+    const todos = getTodoLS()
+
+    todos.push(todo);
+
+    localStorage.setItem("todos", JSON.stringify(todos)); //convertando em json
+    // get = pegar set= salvar
+}
+
+//funçao de remoçao do todo na ls
+const removeTodoLS = (todoText) =>{
+    const todos = getTodoLS();
+    
+    //removendo por indice pois é unico para cada todo, alem de que a operaçao por indice é mais rapida do que filtrar todo um array
+    
+    todos.splice(todoText, 1);
+    // remove o elemento do array a partir do índice especifico salvo acima, o segundo argumento indica que apenas um elemento será removido nessa funçao.
+
+    localStorage.setItem("todos", JSON.stringify(todos)); 
+}
