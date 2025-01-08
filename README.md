@@ -32,6 +32,11 @@ such as search filter and task editing.
 
   ![image](https://github.com/user-attachments/assets/aacf95dd-0089-408d-acd1-ffc8427bfae9)
 
+  **Mobile view**
+  
+  ![Image](https://github.com/user-attachments/assets/f59f6478-65bd-46af-ad60-4bfdf75494f4)
+  
+  ![Image](https://github.com/user-attachments/assets/05485f70-265b-4c2e-a400-7dacc2dd0ccc)
 
 </div>
 
