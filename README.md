@@ -34,7 +34,7 @@ such as search filter and task editing.
 
   **Mobile view**
   
-  ![Image](https://github.com/user-attachments/assets/f59f6478-65bd-46af-ad60-4bfdf75494f4)
+  <img  height="100" width="100" src="https://github.com/user-attachments/assets/f59f6478-65bd-46af-ad60-4bfdf75494f4" />
   
   ![Image](https://github.com/user-attachments/assets/05485f70-265b-4c2e-a400-7dacc2dd0ccc)
 
